@@ -1,0 +1,3 @@
+[submodule "statsWithR"]
+	path = statsWithR
+	url = https://github.com/angerhang/statsTutorial

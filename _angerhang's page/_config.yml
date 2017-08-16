@@ -1,0 +1,29 @@
+# Dependencies
+gems:             [jekyll-paginate]
+markdown:         redcarpet  # github will not longer support redcarpet
+# markdown:         kramdown
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: true
+
+# Setup
+title:            Hao Dong
+tagline:          'BLOGS'
+description:      IMPERIAL COLLEGE
+baseurl:          /
+
+author:
+  name:           'Hao Dong'
+  url:            https://uk.linkedin.com/in/hellohaodong
+
+paginate:         1
+
+# Custom vars
+version:          
+
+github:
+  repo:           https://github.com/zsdonghao
+
+google_analytics: UA-55002898-4
