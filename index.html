@@ -8,6 +8,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="google-site-verification" content="vgiOidXHUdMydJehnk-bYoTeRFsRxVppHJKg2orKRaA" />
 		<title>Hao Dong - Peking University</title>
+		<!-- 北大 logo favicon（浏览器标签图标） -->
+		<link rel="icon" type="image/png" href="images/logo/pku.png">
+		<link rel="apple-touch-icon" href="images/logo/pku.png">
 		<style type="text/css">
 		body {
 			width: 1400px;
@@ -274,6 +277,65 @@
 			img.teaser_img{ width:auto; max-width:280px; }
 		}
 
+		/* ===== 目录导航栏 (sticky table-of-contents nav) ===== */
+		html{ scroll-padding-top:66px; }
+		.site-nav{
+			position:sticky; top:0; z-index:1000;
+			background:rgba(255,255,255,.92);
+			-webkit-backdrop-filter:saturate(180%) blur(8px);
+			backdrop-filter:saturate(180%) blur(8px);
+			border-bottom:1px solid var(--line);
+		}
+		.site-nav .nav-inner{
+			max-width:1200px; margin:0 auto; padding:0 24px;
+			height:54px; display:flex; align-items:center; gap:16px;
+			box-sizing:border-box;
+		}
+		.site-nav .nav-brand{
+			display:flex; align-items:center; gap:9px;
+			font-weight:600; font-size:1.05rem; color:var(--ink);
+			white-space:nowrap; text-decoration:none; font-family:inherit;
+		}
+		.site-nav .nav-brand:hover{ color:var(--ink); text-decoration:none; }
+		.site-nav .nav-brand img{ height:28px; width:auto; display:block; }
+		.site-nav .nav-links{
+			display:flex; align-items:center; gap:2px;
+			margin-left:auto; flex-wrap:wrap;
+		}
+		.site-nav .nav-links a{
+			color:var(--ink); font-family:inherit; font-weight:400;
+			font-size:.96rem; padding:6px 11px; border-radius:6px;
+			white-space:nowrap; transition:background .15s, color .15s;
+		}
+		.site-nav .nav-links a:hover{
+			background:#eef4fa; color:var(--accent-dark); text-decoration:none;
+		}
+		@media (max-width:720px){
+			.site-nav .nav-inner{ height:auto; padding:8px 14px; flex-wrap:wrap; gap:8px; }
+			.site-nav .nav-links{ margin-left:0; width:100%; gap:0; }
+			.site-nav .nav-links a{ padding:5px 8px; font-size:.9rem; }
+			html{ scroll-padding-top:104px; }
+		}
+
+		/* ===== 顶部社交图标 (clickable logo links) ===== */
+		.social-icons{ display:flex; align-items:center; gap:14px; margin:6px 0 2px; }
+		.social-icons a{
+			display:inline-flex; align-items:center; justify-content:center;
+			color:var(--accent); transition:color .15s, transform .15s;
+		}
+		.social-icons a:hover{ color:var(--accent-dark); transform:translateY(-1px); text-decoration:none; }
+		.social-icons svg{ width:24px; height:24px; display:block; fill:currentColor; }
+
+		/* ===== 分节中英切换按钮 ===== */
+		.lang-toggle{
+			font-family:inherit; font-size:.72rem; font-weight:600;
+			color:var(--accent); background:#eef4fa; border:1px solid #d7e6f5;
+			padding:2px 11px; border-radius:12px; cursor:pointer;
+			vertical-align:middle; margin-left:12px; line-height:1.6;
+			transition:background .15s, color .15s;
+		}
+		.lang-toggle:hover{ background:var(--accent); color:#fff; }
+
 		</style>
 
 		<!-- <script>
@@ -291,28 +353,60 @@
 	</head>
 
 	<body>
+		<!-- 目录导航栏 -->
+		<nav class="site-nav">
+			<div class="nav-inner">
+				<a class="nav-brand" href="#about">
+					<img src="images/logo/pku.png" alt="Peking University">
+					<span>Hao Dong</span>
+				</a>
+				<div class="nav-links">
+					<a href="#about">About</a>
+					<a href="#news">News</a>
+					<a href="#lab">Openings</a>
+					<a href="#services">Services</a>
+					<a href="#awards">Awards</a>
+					<a href="#courses">Courses</a>
+					<a href="#publications">Publications</a>
+				</div>
+			</div>
+		</nav>
 		<div id="container">
-			<div class='section_div'>
+			<div id="about" class='section_div'>
 				<table id="personal_info">
 					<tr>
 						<td><img class="photo_of_me" src="images/haodong/haodong10.png" width=180px
 								style="border: 1px solid black; float:left; margin-right:15px" /></td>
 						<td>
 							<div id="DocInfo">
-								<h1>Hao Dong</h1>
-								<!-- 董豪 助理教授 博士生导师 北京大学-计算机学院-前沿计算研究中心 <br><br> -->
-								董豪 北京大学长聘副教授 国家科技创新2030首席 国家级青年人才计划 <br><br>
+								<h1>Prof. Hao Dong</h1>
+								Tenured Associate Professor at Peking University <br>
+								Chief Scientist at PrimeBot <br>
+								董豪 北京大学长聘副教授 国家科技创新2030首席 国家级青年人才计划 <br>
 								启元机器人 首席科学家 研究院院长<br><br>
-								hao.dong%pku.edu.cn<br><br>
-								<a href="https://scholar.google.com/citations?hl=en&user=xLFL4sMAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a> /
-								<!-- <a href="https://www.researchgate.net/profile/Hao_Dong35">Research Gate</a> </a> /
-		<a href="https://dblp.uni-trier.de/pers/hd/d/Dong_0003:Hao">DBLP</a> </a> / -->
-								<!-- Github: -->
-								<a href="https://github.com/zsdonghao">Github</a>
-								<!-- / -->
-								<!-- <a href="https://github.com/hyperplane-lab">Lab</a> </a> -->
-								<!-- https://orcid.org/0000-0002-7984-9909 -->
-								<br> <br>
+								<!-- 社交图标：Google Scholar / GitHub / Email -->
+								<div class="social-icons">
+									<a href="https://scholar.google.com/citations?hl=en&user=xLFL4sMAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
+										<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+									</a>
+									<a href="https://github.com/zsdonghao" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+										<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+									</a>
+									<a href="mailto:hao.dong@pku.edu.cn" title="Email" aria-label="Email">
+										<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+									</a>
+									<a href="https://www.xiaohongshu.com/user/profile/5e87f674000000000100144e?xsec_token=ABIr7TF-kCl7GR-mj2i5vu_mdekat_ybw4QcSh42IRQZE=&xsec_source=pc_search" target="_blank" rel="noopener" title="小红书 / Xiaohongshu" aria-label="Xiaohongshu">
+										<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="2.5" width="23" height="19" rx="4.5" fill="#FF2442"/><text x="12" y="15.4" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="6.6" font-weight="700" fill="#FFFFFF">小红书</text></svg>
+									</a>
+									<a href="https://x.com/HaoDong123" target="_blank" rel="noopener" title="X / Twitter" aria-label="X">
+										<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>
+									</a>
+									<a href="https://www.zhihu.com/people/zsdh123" target="_blank" rel="noopener" title="知乎 / Zhihu" aria-label="Zhihu">
+										<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="2.5" width="23" height="19" rx="4.5" fill="#0084FF"/><text x="12" y="15.4" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="8.6" font-weight="700" fill="#FFFFFF">知乎</text></svg>
+									</a>
+								</div>
+								<!-- <a href="https://www.researchgate.net/profile/Hao_Dong35">Research Gate</a> / <a href="https://dblp.uni-trier.de/pers/hd/d/Dong_0003:Hao">DBLP</a> / https://orcid.org/0000-0002-7984-9909 / <a href="https://github.com/hyperplane-lab">Lab</a> -->
+								<br>
 								<!-- <li>
 			<span style="font-weight:bold;">Open positions available (
 					<a href="recurit/phd.html">Ph.D</a>,
@@ -332,14 +426,15 @@
 				<!-- <br><br> -->
 
 
-				I am a tenured Associate Professor in <a href="https://cs.pku.edu.cn/English/Home.htm">School of CS</a> and <a href="https://cfcs.pku.edu.cn/english/">CFCS</a> at Peking University.
-				<!-- where I lead <a href="#lab"> PKU-Hyperplane Lab</a> and <a href="#lab"> PKU-Agibot Joint Lab</a>. -->
+				I am a tenured Associate Professor at the <a href="https://cs.pku.edu.cn/English/Home.htm">School of Computer Science</a> and the <a href="https://cfcs.pku.edu.cn/english/">Center for Frontiers in Computing Science</a>, Peking University,
+				and a recipient of the National Young Talent Program.
 				I am also the Chief Scientist at <a href="https://www.primebot.cn/">PrimeBot</a>.
 				<!-- I am also affiliated with Beijing Academy of Articial Intelligence (BAAI 北京智源). -->
 				 <!-- and PengCheng Lab (鹏城实验室). -->
-				My current research focuses on embodied AI, large models, reinforcement learning, computer vision and the corresponding open-source system.
+				<!-- My current research focuses on embodied AI, large models, reinforcement learning, computer vision and the corresponding open-source system. -->
 				<!-- My current research focuses on several exciting areas: robot vision, robotic manipulation, embodied large models, navigation and autonomous decision making.  -->
-				Our goal is to find the scaling law to create a cost-effective general-purpose robot system.
+
+				My research focuses on exploring scaling laws to develop cost-effective general-purpose robot system.
 				<!-- <a href="https://yoshuabengio.org/2023/05/07/ai-scientists-safe-and-useful-ai/">in a strictly safe way</a>, -->
 				<!-- not limited to industrial applications and home assistance scenarios. -->
 				<!-- aiming to make AI benefits a global scale. -->
@@ -354,7 +449,7 @@
 				<details><summary><b><font color="1367a7">more</font></b></summary>
 				<!-- <br> -->
 				Additionally, I am fortunate to serve as an Area Chair or Senior Program Committee member for CVPR, CoRL, NeurIPS and AAAI conferences,
-				and as the Associate Editor of ICRA and Machine Intelligence Research. I received the
+				and as the Associate Editor of ICRA, Journal of Field Robotics and Machine Intelligence Research. I received the
 				<a href="images/award/2023 MIR Oustanding Associate Editor Award-Hao Dong.pdf">MIR Outstanding Associate Editor Award</a>.
 				Also, I have been involved in open source AI system for a long time, I have led several open source projects, such as
 				<a href="https://prsorg.github.io">Polar Research Station</a>,
@@ -366,27 +461,16 @@
 				the <a href="paper/ACM MM Certification.pdf">Best Open Source Software Award</a> at ACM Multimedia 2017,
 				and two OpenI Outstanding Project Awards (awarded in 2021 and 2022 respectively).
 
-				<br><br>
-
+				<!-- <br><br>
 				Before joining PKU, I obtained my Ph.D. degree from Imperial College London
 				under the supervision of <a href="https://www.imperial.ac.uk/people/y.guo">Yike Guo</a>.
-				<!-- <a href="https://provost.hkust.edu.hk/meet_the_provost.html">Yike Guo</a>  -->
-				<!-- He is a Ph.D. student at the Department of Computing of Imperial College London under the supervision of Prof. Yike Guo and Prof. Paul M. Matthews. -->
-				<!-- My research involves computer vision with the goal of recreating and interacting the world. -->
-				<!-- My current research involves deep learning and computer vision with the goal of reducing the data required for learning intelligent systems. -->
-				<!-- and has publications on ICCV, TIFS, TMI, TNSRE, ACM MM, etc.
-			He is an active reviewer of SIGGRAPH, TIP, TKDE, Neurocomputing, PLUS ONE, etc. -->
-				<!-- I am passionate about popularising artificial intelligence technologies and established <a href="https://tensorlayer.readthedocs.io">TensorLayer</a>, a deep learning and reinforcement learning library for scientists and engineers, which won the <a href="paper/ACM MM Certification.pdf">Best Open Source Software Award</a> at ACM Multimedia 2017. -->
-			<!-- MSc specialist degree (visual information processing) -->
 				Prior to my Ph.D., I received a MSc degree with distinction from Imperial,
-				and a first-class BEng degree from the University of Central Lancashire.
-				<!-- Furthermore, I have founded a startup focused on AI-driven hardware between 2012 and 2015. -->
+				and a first-class BEng degree from the University of Central Lancashire. -->
 				</details>
 			</div>
-			<hr>
 
 
-			<div class='section_div news'>
+			<div id="news" class='section_div news'>
 			<h2>News</h2>
 			<!-- <li><span class="badge-new">NEW</span> 近期中文报告：</li>
 				<ul>
@@ -394,6 +478,7 @@
 							<li> <a href="https://www.bilibili.com/video/BV1ggWreDExa/?buvid=Z645F66B7DAB64154BEEB8E2B959A109DBE7&is_story_h5=false&mid=CYNhxo%2BNiGPK%2F8K%2BHj0MJQ%3D%3D&plat_id=114&share_from=ugc&share_medium=iphone&share_plat=ios&share_session_id=7D66E54C-2086-49A8-B156-ABB763B0556E&share_source=WEIXIN&share_tag=s_i&timestamp=1724593839&unique_k=uEqX0Ix&up_id=622988882&vd_source=9486a6185d2390720d5d92dbddc724cb">《具身智能技术趋势分析》（2024.8）</a></li>
 							<li> <a href="https://www.bilibili.com/video/BV1zU411U7q1/?buvid=XU591F45A80C6AEDE9C3A6A9417168E61D514&from_spmid=dt.dt-video-quick-cosume.video.0&is_story_h5=false&mid=Dsm%2BIb%2FVzua%2BbxtpKXqKKw%3D%3D&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=374ab0c8-53ad-46e8-b37d-5e1d76b8995a&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1721912552&unique_k=lFEQrR1&up_id=622988882&share_times=6&wxfid=o7omF0SUhFWtNqcVlXQdHtNhdpSo&vd_source=9486a6185d2390720d5d92dbddc724cb"> 《具身智能关键技术研究：操纵、决策、导航》（2024.6）</a></li>
 				</ul> -->
+			<li>[2026/07] <span class="badge-new">NEW</span> Call for Papers: I am an organizer of the <a href="https://sites.google.com/view/bimanual-robot-learning">Workshop "Scaling vs. Structure? Rethinking Bimanual Manipulation Beyond Single-Arm Policies"</a> @ IROS 2026. Submissions are warmly welcome!</li>
 			<li>[2026/07] <span class="badge-new">NEW</span> <a href="https://zhuanlan.zhihu.com/p/2023135401460736283">启元机器人（688585）研究院高薪招聘具身智能人才：百万级数据+真机闭环，攻坚通用具身智能</a></li>
 			<li>[2026/07] <span class="badge-new">NEW</span> Three papers get accepted to ACM MM 2026</li>
 			<li>[2026/06] <span class="badge-new">NEW</span> One paper gets accepted to ECCV 2026</li>
@@ -504,7 +589,6 @@
 			<!-- <li>[04/2016]「Talk」Invited talk, “Introduction of Artificial Neural Network 1�71ￄ1�771ￄ1�71ￄ1�777 at Imperial College </li> -->
 			<!-- <li>[09/2016] TensorLayer is released. It has quickly gained over 2000+ stars on <a href="https://github.com/zsdonghao/tensorlayer">Github</a>! </li> -->
 			</div>
-			<hr>
 
 			<!-- <ul>
 <li>
@@ -527,7 +611,7 @@
 
 
 			<div id="lab" class='section_div' id='ResearchGroup'>
-				<h2>Our Lab</h2>
+				<h2>Openings <button id="openings-lang-btn" class="lang-toggle" onclick="toggleOpeningsLang()">EN</button></h2>
 
 				<!-- We study how to improve the learning ability of artificial intelligence systems. -->
 				<!-- We are especially interested in <b>vision</b> and <b>robotics</b>, -->
@@ -545,18 +629,68 @@
 
 				<!-- Our lab, affiliated with the <a href="http://cfcs.pku.edu.cn">CFCS</a> and the <a -->
 					<!-- href="https://cs.pku.edu.cn/English/Home.htm">School of CS</a> at PKU,  -->
-				Our lab welcomes research interns, masters, PhD candidates and postdocs. The current research interests include: <br>
-				<!-- Our lab's name, 'Lab', reflects our commitment to exploring diverse and evolving frontiers in AI and robotics, allowing our research to adapt and grow as the field evolves. -->
+				<div id="openings-en" style="display:none">
+				We are always looking for motivated students, interns and researchers passionate about <b>embodied AI</b>, <b>large models</b>, <b>reinforcement learning</b> and <b>computer vision</b>.
+				<!-- Our research interests include: <br>
 				<li>manipulation<br></li>
 				<li>task planning<br></li>
 				<li>navigation<br></li>
-				<li>safety and interpretability in robotics<br></li>
-				<!-- <br> -->
-				<!-- <br> -->
-			  <!-- I also have the leading of the Embodied AI center at the Beijing Academy of Artificial Intelligence (<a href="https://baai.ac.cn/english.html">BAAI</a> 北京智源), where we are also actively seeking for research scientists, engineers, and interns. -->
-				<!-- Additionally, I am also honored to be a member of PengCheng Lab (<a href="https://pcl.ac.cn">PCL</a> 鹏城实验室), where I contribute to a variety of exciting open-source projects. -->
+				<li>safety and interpretability in robotics<br></li> -->
+				<br>
+				<br>
+
+				<b><font color="1367a7">PhD &amp; Master Admissions at Peking University</font></b>
+				<li>Each year we have <b>2&ndash;3 PhD</b> and <b>1&ndash;2 Master</b> positions.</li>
+				<li>We have a long-standing tradition of <b>joint training / co-supervision</b> with several partner universities.</li>
+				<li>Applicants from <b>Hong Kong, Macao, Taiwan and international</b> backgrounds are also welcome (about <b>1</b> extra PhD/Master position).</li>
+				<br>
+
+				<b><font color="1367a7">PrimeBot (启元) Research Institute</font></b>
+				<li>We are recruiting <b>Chief Researchers</b>, <b>Research Scientists</b> and <b>Engineers</b>.</li>
+				<li>Current students with research or engineering experience in embodied AI are also welcome to join us as <b>interns</b>.</li>
+				<br>
+
+				<b><font color="1367a7">Where our students go</font></b>
+				<li>Many of our former students and interns have gone on to top universities worldwide as <b>PhD, MSc or PostDoc</b>, including <b>Oxford</b>, <b>Berkeley</b>, <b>MIT</b>, <b>Princeton</b>, <b>Imperial College London</b>, <b>CMU</b>, <b>UMass Amherst</b>, <b>CUHK</b>, <b>University of Edinburgh</b>, <b>Tsinghua University</b> and <b>Peking University</b>.</li>
+				<br>
+
 				For more information, please contact me at <i>hao.dong (a) pku.edu.cn</i>
 				<br>
+				</div>
+
+				<div id="openings-zh">
+				我们长期欢迎对<b>具身智能</b>、<b>大模型</b>、<b>强化学习</b>和<b>计算机视觉</b>充满热情的学生、实习生与研究人员加入。
+				<br>
+				<br>
+
+				<b><font color="1367a7">北京大学 博士 &amp; 硕士招生</font></b>
+				<li>每年有 <b>2～3 个博士</b> 和 <b>1～2 个硕士</b> 名额。</li>
+				<li>与多所高校有长期的 <b>联合培养 / 联合指导</b> 传统。</li>
+				<li>同样欢迎 <b>港澳台及国际</b> 背景的申请者（另有约 <b>1</b> 个博士/硕士名额）。</li>
+				<br>
+
+				<b><font color="1367a7">启元机器人（PrimeBot）研究院</font></b>
+				<li>招聘 <b>首席研究员</b>、<b>研究员</b> 与 <b>工程师</b>。</li>
+				<li>也欢迎有具身智能研究或工程经验的在校学生加入 <b>实习</b>。</li>
+				<br>
+
+				<b><font color="1367a7">学生去向</font></b>
+				<li>我们许多毕业生与实习生以 <b>博士、硕士或博士后</b> 身份前往世界顶尖高校深造，包括 <b>牛津大学</b>、<b>加州大学伯克利分校</b>、<b>MIT</b>、<b>普林斯顿大学</b>、<b>帝国理工学院</b>、<b>CMU</b>、<b>马萨诸塞大学阿默斯特分校</b>、<b>香港中文大学</b>、<b>爱丁堡大学</b>、<b>清华大学</b> 和 <b>北京大学</b>等。</li>
+				<br>
+
+				如需了解更多信息，欢迎联系 <i>hao.dong (a) pku.edu.cn</i>
+				<br>
+				</div>
+
+				<script>
+				function toggleOpeningsLang(){
+					var en=document.getElementById('openings-en');
+					var zh=document.getElementById('openings-zh');
+					var btn=document.getElementById('openings-lang-btn');
+					if(en.style.display!=='none'){ en.style.display='none'; zh.style.display=''; btn.textContent='EN'; }
+					else{ en.style.display=''; zh.style.display='none'; btn.textContent='中文'; }
+				}
+				</script>
 
 				<!-- <details><summary><b><font color="1367a7"> lab members</font></b></summary>
 
@@ -632,89 +766,82 @@
 			 <!-- </details> -->
 
 			</div>
-			<hr>
 
 
-			<!--
-<div class='section_div'>
-	<h2>News</h2>
-	<p>&#9659; New blog post on our work on <a href="https://blog.openai.com/evolved-policy-gradients/">Evolved Policy Gradients</a>.<br>
-	&#9659; I am co-organizing a <a href="https://sites.google.com/view/cvpr2018tutorialongans/">tutorial on GANs at CVPR 2018</a>.</p>
-	<p>I recently co-organised the <a href="http://vui.eecs.berkeley.edu/">2nd Workshop on Visual Understanding for Interaction</a> at CVPR 2017. Talk slides coming soon!</p>
-</div>
-<hr>
--->
-
-			<div class='section_div'>
+			<div id="services" class='section_div'>
 				<h2>Services</h2>
-				<li> Area Chair: NeurIPS (2023, 2024, 2025), CVPR (2023, 2024, 2026), CoRL (2026)	 </li>
-				<li> Senior Program Committee: AAAI (2023, 2024)				   </li>
-				<li> Associate Editor: ICRA (2023, 2024, 2026), Machine Intelligence Research (2022-Now), Journal of Field Robotics – Embodied AI (2025)</li>
-				<!-- <li class="service1">Open-Source Organisation: <a href="https://github.com/tensorlayer">TensorLayer</a> and <a href="https://github.com/openmlsys">OpenMLsys</a> communities</li> -->
-				<!-- <li class="service2">Journal Organisation
-					<ul>
-					<li> Associate Editor of Machine Intelligence Research
-					</ul>
-				</li> -->
+				<b><font color="1367a7">Conference Committee &amp; Journal Editorship</font></b>
+				<li>Area Chair: NeurIPS (2023, 2024, 2025), CVPR (2023, 2024, 2026), CoRL (2026)</li>
+				<li>Senior Program Committee: AAAI (2023, 2024)</li>
+				<li>Associate Editor: ICRA (2023, 2024, 2026), Machine Intelligence Research (2022&ndash;Now)</li>
+				<li>Guest Editor: Special Issue on Embodied AI, Journal of Field Robotics (2025)</li>
+				<!-- <br> -->
 
-			<!-- <details><summary><b><font color="1367a7"> show more</font></b></summary> -->
-				<!-- <li> Conference & Workshop Organisation
-						<ul>
-						<li> Co-chair of Learning Robot Manipulation Forum @ PRCV 2022
-						<li> Co-chair of <a href="https://neurips-hill.github.io">Human in the Loop Learning (HiLL) Workshop</a> @ NeurIPS 2022
-						<li> Organiser of <a href="http://saferl.online/2022">International Workshop on Safe Reinforcement Learning Theory and its Applications</a> @ IEEE International Conference on Multisensor Fusion and Integration (MFI) 2022
-						<li> Co-chair of <a href="https://bda4s.github.io"> International Workshop on Big Data Analytics for Sustainability</a> @ IEEE International Conference Big Data 2022
-						<li> Technical Program Committee of <a href="http://www.ieee-cybermatics.org/2022/dependsys/index.html"> IEEE DependSys 2022</a>
-						</ul>
-				</li> -->
-				<!-- <li >Organizer of the 1st International Workshop on Safe Reinforcement Learning Theory and its Applications at IEEE International Conference on Multi-sensor Fusion and Integration (MFI) 2022</li> -->
-				<!-- <li>Co-chair of the 2nd International Workshop on Big Data Analytics for Sustainability at IEEE International Conference Big Data 2022</li> -->
-				<!-- <li> Peer-reviewed Journals and Conferences
-					<ul>
-					<li> Associate Editor, ICRA (24)					 </li>
-					<li> Area Chair, NeurIPS (23)					 </li>
-					<li> Area Chair, CVPR (23, 24)					 </li>
-					<li> Senior Program Committee, AAAI (23, 24)				 </li>
-					<li> Reviewer, ICLR (23)						 </li>
-					<li> Reviewer, NeurIPS Dataset and Benchmark (22)	 </li>
-					<li> Reviewer, NeurIPS (21,22)					 </li>
-					<li> Reviewer, CoRL (20,21,22)					 </li>
-					<li> Reviewer, IROS (20,21,22)					 </li>
-					<li> Reviewer, CVPR (21,22)						 </li>
-					<li> Program Committee, AAAI (22)					 </li>
-					<li> Reviewer, ICRA (22)								 </li>
-					<li> Reviewer, ICCV (21)								 </li>
-					<li> Reviewer, SIGGRAPH Asia (20)					 </li>
-					<li> Reviewer, MICCAI (20)								 </li>
-					<li> Reviewer, China CAD&CG (20)					 </li>
-					<li> Reviewer, EuroGRAPHICS (20)					 </li>
-					<li> Reviewer, PAMI (19)								 </li>
-					<li> Reviewer, SIGGRAPH (19)						 </li>
-					<li> Reviewer, TIP (18)					 					</li>
-					<li> Reviewer, TKDE (18)					 				</li>
-					<li> Reviewer, PLUS ONE (18)					 			</li>
-					<li> Reviewer, Neurocomputing (17)					 </li>
-					</ul>
-				</li> -->
-				<!-- </ul> -->
-			<!-- </details> -->
-				<!-- <li>Program Commitee of IEEE CBMS</li> -->
-				<!-- <a class="btn btn_one" onclick="servicesShow()">[ <span> <b>show more</b></span> ]</a> -->
+				<details><summary><b><font color="1367a7"> show more </font></b></summary>
+				<b><font color="1367a7">Conference &amp; Workshop Organization</font></b>
+				<li>Organizer, <a href="https://sites.google.com/view/bimanual-robot-learning">IROS Workshop on Scaling vs. Structure: Rethinking Bimanual Manipulation Beyond Single-Arm Policies</a>, 2026</li>
+				<li>Organizer, <a href="https://wclop.github.io">1st ICCV Workshop and Challenge on Category-Level Object Pose Estimation in the Wild</a>, 2025</li>
+				<li>Executive Committee Member, Autonomous Robotic Technology Seminar, Chinese Association of Automation, 2024</li>
+				<li>Organizer, <a href="https://prsorg.github.io">PRS Challenge: Human-centered In-building Embodied Delivery</a> @ CVPR Embodied AI Workshop, 2024</li>
+				<li>Co-chair, Learning Robot Manipulation Forum @ PRCV, 2022</li>
+				<li>Co-chair, <a href="https://neurips-hill.github.io">Human in the Loop Learning (HiLL) Workshop</a> @ NeurIPS, 2022</li>
+				<!-- <li>Organizer, <a href="http://saferl.online/2022">International Workshop on Safe Reinforcement Learning Theory and its Applications</a> @ IEEE MFI, 2022</li> -->
+				<br>
+
+				<!-- <b><font color="1367a7">Open-Source Initiatives</font></b>
+				<li>Founder, <a href="https://github.com/tensorlayer">TensorLayer</a> &mdash; a cross-platform deep learning framework (100+ contributors, 16K+ GitHub stars)</li>
+				<li>Co-founder, <a href="https://github.com/openmlsys">OpenMLsys</a> &mdash; an open-source machine learning system project (40+ contributors, 4.1K+ GitHub stars)</li>
+				<br> -->
+				</details>
 			</div>
-			<hr>
-						<div class='section_div'>
-								<h2>Courses</h2>
-									<li><a href="courses/index_foundamentals_of_AI.html">Foundamentals of AI</a> (Spring Term 2023 - )<br>
-									<li><a href="courses/index_introduction_to_computing_A.html">Introduction to Computing (A)</a> (Fall Term 2022 - )<br></li>
-								</li>
-								<details><summary><b><font color="1367a7"> previous courses</font></b></summary>
-									<li><a href="https://deep-generative-models.github.io">Deep Generative Models</a> (Spring Term 2020 - 2022)<br></li>
-									<li><a href="courses/index_introduction_to_computing_B.html">Introduction to Computing (B)</a> (Fall Term 2020 - 2021)<br></li>
-									<li><a href="http://elective.pku.edu.cn/elective2008/edu/pku/stu/elective/controller/courseDetail/getCourseDetail.do?kclx=BK&course_seq_no=BZ1920104833460_15539">Study and Practice on Topics of Frontier Computing (I)</a> (Autumn Term 2019)<br></li>
-									<li><a href="courses/deep-learning/2019_introduction_deep_learning.html">Introduction to Deep Learning (Turing Class)</a> (Summer Term 2019)<br></li>
-								</details>
-						</div>
-			<hr>
+
+			<div id="awards" class='section_div'>
+				<h2>Selected Awards & Honors</h2>
+				<li>[2026] <b>Best Paper Award Finalist in Robot Manipulation and Locomotion</b> — ICRA </li>
+				<!-- <li>[2026] <b>Best Paper Runner-Up</b> — CVPR 3D-LLM/VLA Workshop</li> -->
+				<!-- <li>[2026] <b>10 Best Demo</b> (Deformable Manipulation System) — EAI-100</li> -->
+				<li>[2026] <b>Best Research Paper</b> — UKRI AI &amp; Robotics Research Awards</li>
+				<li>[2026] <b>First Prize for Teaching Achievements</b> — Peking University</li>
+				<li>[2025] <b>Intel China Outstanding Research Award</b> — Intel</li>
+				<!-- <li>[2025] <b>Second Prize</b>, Multi-terrain Humanoid Locomotion — ICCV Workshop on Human-Robot-Scene Interaction and Collaboration</li> -->
+				<!-- <li>[2025] <b>Distinguished Workshop Paper Award</b> — IROS Workshop on Frontiers in Dynamic, Intelligent, and Adaptive Multi-arm Manipulation</li> -->
+				<!-- <li>[2025] <b>Best Paper Award Finalist</b> — IROS Workshop on Robotic Manipulation of Deformable Objects</li> -->
+				<!-- <li>[2025] <b>Single-Year World's Top 2% Scientists</b> — Stanford University &amp; Elsevier</li> -->
+				<!-- <li>[2025] <b>Youth Outstanding Paper Award Shortlist</b> (Ruihai Wu) — World Artificial Intelligence Conference</li> -->
+				<li>[2025] <b>Excellent Undergraduate Thesis Supervising Teacher Award</b> — Peking University</li>
+				<!-- <li>[2025] <b>"Top Ten" Excellent Graduation Thesis</b> (Haoran Lu) — EECS, Peking University</li> -->
+				<li>[2025] <b>Outstanding Young Researcher Paper Nomination Award</b> — China Embodied Intelligence Conference</li>
+				<li>[2024] <b>Best Mentor Award</b> — ByteDance</li>
+				<li>[2024] <b>Best Application Paper Award Finalist</b> — IROS</li>
+				<!-- <details><summary><b><font color="1367a7"> show more </font></b></summary> -->
+				<li>[2023] <b>Undergrad Research Training Excellent Mentor Award</b> — Peking University</li>
+				<li>[2023] <b>MIR Outstanding Associate Editor Award</b> — Machine Intelligence Research</li>
+				<!-- <li>[2023] <b>Excellent Organization Award</b> — Chinese Society for Optical Engineering</li> -->
+				<!-- <li>[2022] <b>Outstanding Open-Source Project</b> — OpenI Open Source Community</li> -->
+				<li>[2022] <b>Advanced Individual in Internationalization Work</b> — School of Computer Science, Peking University</li>
+				<!-- <li>[2022] <b>Champion, MyoChallenge Die Reorientation Track</b> — Challenge on Digital Hands @ NeurIPS</li> -->
+				<!-- <li>[2021] <b>Outstanding Young Talents Program</b> — CPC Central Organization Department</li> -->
+				<li>[2021] <b>Outstanding Contribution Award</b> — China's Ministry of Education</li>
+				<li>[2021] <b>High-impact Publications in CS by Chinese Researchers</b> — Springer Nature</li>
+				<!-- <li>[2021] <b>Outstanding Author</b> — Publishing House of Electronics Industry</li> -->
+				<li>[2021] <b>Outstanding Open-Source Project</b> — OpenI Open Source Community</li>
+				<li>[2021] <b>Running-up Award in Teaching</b> — Peking University</li>
+				<li>[2017] <b>The Best Open Source Software Award</b> — ACM Multimedia</li>
+				<!-- </details> -->
+			</div>
+
+			<div id="courses" class='section_div'>
+					<h2>Courses</h2>
+						<li><a href="courses/index_foundamentals_of_AI.html">Foundamentals of AI</a> (Spring Term 2023 - )<br>
+						<li><a href="courses/index_introduction_to_computing_A.html">Introduction to Computing (A)</a> (Fall Term 2022 - )<br></li>
+					</li>
+					<details><summary><b><font color="1367a7"> previous courses</font></b></summary>
+						<li><a href="https://deep-generative-models.github.io">Deep Generative Models</a> (Spring Term 2020 - 2022)<br></li>
+						<li><a href="courses/index_introduction_to_computing_B.html">Introduction to Computing (B)</a> (Fall Term 2020 - 2021)<br></li>
+						<li><a href="http://elective.pku.edu.cn/elective2008/edu/pku/stu/elective/controller/courseDetail/getCourseDetail.do?kclx=BK&course_seq_no=BZ1920104833460_15539">Study and Practice on Topics of Frontier Computing (I)</a> (Autumn Term 2019)<br></li>
+						<li><a href="courses/deep-learning/2019_introduction_deep_learning.html">Introduction to Deep Learning (Turing Class)</a> (Summer Term 2019)<br></li>
+					</details>
+			</div>
 
 
 						<!-- <div class='section_div'>
@@ -731,7 +858,7 @@
 			</div>
 			<hr> -->
 
-			<div class='section_div'>
+			<div id="publications" class='section_div'>
 				<!--
 	<h2>Publications</h2>
 	For all publications please check my <a href="https://scholar.google.co.uk/citations?hl=en&user=xLFL4sMAAAAJ">Google Scholar</a> and
